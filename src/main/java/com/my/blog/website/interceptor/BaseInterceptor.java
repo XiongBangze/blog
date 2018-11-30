@@ -7,6 +7,7 @@ import com.my.blog.website.constant.WebConst;
 import com.my.blog.website.dto.Types;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,15 +25,15 @@ public class BaseInterceptor implements HandlerInterceptor {
     private static final Logger LOGGE = LoggerFactory.getLogger(BaseInterceptor.class);
     private static final String USER_AGENT = "user-agent";
 
-    @Resource
+    @Autowired
     private IUserService userService;
 
     private MapCache cache = MapCache.single();
 
-    @Resource
+    @Autowired
     private Commons commons;
 
-    @Resource
+    @Autowired
     private AdminCommons adminCommons;
 
 
